@@ -134,7 +134,7 @@ body {
     flex-direction: column;   /* Stack image and content vertically */
 
     /* Flexbox sizing for responsiveness without media queries */
-    flex: 1 1 300px;        /* flex-grow: 1, flex-shrink: 1, flex-basis: 300px */
+    flex: 0 1 300px;        /* flex-grow: 1, flex-shrink: 1, flex-basis: 300px */
                             /* This means: allow growing, allow shrinking, aim for 300px base */
                             /* Combined with flex-wrap, this creates the 3, 2, 1 column effect */
 }
