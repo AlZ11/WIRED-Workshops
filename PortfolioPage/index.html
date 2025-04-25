@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
+  </head>
 <body>
 
-    <div class="container">
+    <div class="container" id="home">
         <header class="header">
-            <div class="name">[Name]</div> 
+            <a href="#home" class="name">[Name]</a> 
             <nav class="nav">
                 <ul>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -26,12 +26,12 @@
                     <h3>Computer Science Student</h3>
                     <p>I'm a third-year Computer Science student at [University] in [Location], specialising in Advanced Computer Science. <br>
                         I love turning complex ideas into elegant software solutions that make a real impact.</p>
-                    <a href="#" class="cta-button">See My Works</a>
+                    <a href="#projects" class="cta-button">See My Works</a>
                 </div>
                 <img src="Profile_avatar_placeholder_large.png" alt="Avatar placeholder image" class="hero-image">
             </section>
     
-            <section class="projects"> 
+            <section class="projects" id="projects"> 
               <h2 class="projects-title">My Projects</h2>
                 <div class="projects-container">
     
@@ -129,12 +129,11 @@
                           </div>
                         </div>
                       </div>
-    
                 </div>
     
             </section>
               
-            <section class="contact">
+            <section class="contact" id="contact">
                 <h2 class="contact-title">Contact me!</h2>
                 <p class="contact-text">Feel free to reach out for projects, collaborations, or just to say hi 👋</p>
                 <div class="contact-buttons">
