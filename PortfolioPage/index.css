@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: sans-serif; /* Choose a nicer font later! */
     line-height: 1.6;
@@ -31,6 +35,8 @@ body {
 .header .name {
     font-size: 1.5rem;
     font-weight: bold;
+    text-decoration: none;  /* removes underline */
+    color: inherit;         /* keeps the current text color */
 }
 
 .header .nav ul {
@@ -56,25 +62,29 @@ body {
 .hero {
     display: flex;              /* Use flexbox */
     align-items: center;      /* Vertically align content and image */
-    padding: 3rem 0;          /* Add padding top/bottom */
+    justify-content: center;
     gap: 2rem;                /* Space between content and image */
     flex-wrap: wrap;            /* Allow items to wrap on smaller screens if needed */
+    min-height: 90vh;
 }
 
 .hero-content {
     flex: 1;                  /* Allow content to take available space */
     min-width: 300px;         /* Prevent content from getting too squished */
+    font-size: 1.1rem;
 }
 
 .hero-content h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    font-size: 3rem;
 }
 
 .hero-content h3 {
     font-size: 1.5rem;
     color: #555;
     margin-bottom: 1rem;
+    font-size: 1.75rem;
 }
 
 .hero-content p {
@@ -85,6 +95,7 @@ body {
     flex-basis: 250px;       /* Suggest a base width for the image container */
     flex-shrink: 0;         /* Prevent image from shrinking */
     text-align: center;     /* Center image if flex-wrap occurs */
+    border-radius: 200px;
 }
 
 .hero-image img {
@@ -134,7 +145,7 @@ body {
     flex-direction: column;   /* Stack image and content vertically */
 
     /* Flexbox sizing for responsiveness without media queries */
-    flex: 1 1 300px;        /* flex-grow: 1, flex-shrink: 1, flex-basis: 300px */
+    flex: 0 1 300px;        /* flex-grow: 1, flex-shrink: 1, flex-basis: 300px */
                             /* This means: allow growing, allow shrinking, aim for 300px base */
                             /* Combined with flex-wrap, this creates the 3, 2, 1 column effect */
 }
@@ -196,16 +207,15 @@ body {
 .contact {
     padding: 3rem 0;
     text-align: center;       /* Center align title and text */
-    border-top: 1px solid #eee; /* Separator line */
+    margin-bottom: 2rem;
 }
 
 .contact-title {
     font-size: 2rem;
-    margin-bottom: 1rem;
 }
 
 .contact-text {
-    margin-bottom: 1.5rem;
+    margin: 3rem;
     color: #555;
 }
 
