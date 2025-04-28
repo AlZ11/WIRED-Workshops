@@ -1,0 +1,239 @@
+:root {
+	--accent: #47e6e8;
+}
+/* --- General Reset & Variables --- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: #f5f5f5;
+	color: #000;
+}
+
+.container {
+	width: min(90%, 1200px);
+	margin-inline: auto;
+}
+
+/* --- Navigation --- */
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 24px 0;
+}
+
+.nav ul {
+	list-style: none;
+	display: flex;
+	gap: 48px;
+}
+
+.nav a {
+	text-decoration: none;
+	color: #000;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.btn-secondary {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	padding: 8px 24px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 3rem;
+	padding: 4rem 0 6rem;
+}
+
+/* Text */
+.hero-text h1 {
+	font-size: 48px;
+	line-height: 1.2;
+	font-weight: 300;
+}
+
+.hero-text h1 span {
+	font-weight: 600;
+}
+
+.hero-text p {
+	font-size: 12px;
+	max-width: 260px;
+	margin-block: 24px;
+}
+
+.btn-primary {
+	background: #ff6b00;
+	color: #fff;
+	border: none;
+	border-radius: 20px;
+	padding: 10px 32px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+/* Skill tags */
+.skill-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 40px;
+}
+
+.tag {
+	padding: 6px 16px;
+	font-size: 14px;
+	border-radius: 4px;
+	text-transform: lowercase;
+	background: #ff6b00;
+	color: #fff;
+}
+
+.tag.orange {
+	background: #ff6b00;
+}
+
+.tag.dark {
+	background: #1a1a1a;
+}
+
+.tag.gray {
+	background: #d4d4d4;
+	color: #000;
+}
+
+/* Image wrapper */
+.hero-image {
+	position: relative;
+	width: 420px;
+	height: 420px;
+	flex-shrink: 0;
+}
+
+/* Orange diagonal stripe */
+.hero-image::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 55%;
+	background: var(--accent);
+	transform: skewX(-35deg);
+	transform-origin: right;
+	z-index: -1;
+}
+
+/* Portrait inside a rounded circle */
+.hero-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50% 0 50% 80%;
+	position: relative;
+	z-index: 1;
+}
+
+/* Experience badge */
+.experience-badge {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(-30%, -50%);
+	background: #1a1a1a;
+	color: #fff;
+	padding: 12px 16px;
+	border-radius: 8px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.experience-badge strong {
+	font-size: 24px;
+	display: block;
+}
+
+/* --- Projects Section --- */
+.projects-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.projects-head h2 {
+	font-size: 28px;
+}
+
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 2rem;
+}
+
+.project-card {
+	position: relative;
+	aspect-ratio: 1/1;
+	background: #fafafa;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.project-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.project-card.peach {
+	background: #f5d6c1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.project-card.peach .logo {
+	font-size: 40px;
+	font-weight: 600;
+}
+
+.card-index {
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+	background: #1a1a1a;
+	color: #fff;
+	padding: 6px 10px;
+	border-radius: 4px;
+	font-weight: 600;
+}
+
+.project-card h3 {
+	margin-top: 8px;
+	font-size: 14px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+	.hero {
+		flex-direction: column;
+	}
+
+	.hero-image {
+		width: 280px;
+		height: 280px;
+	}
+}
