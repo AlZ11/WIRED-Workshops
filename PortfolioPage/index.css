@@ -10,17 +10,16 @@ html {
 }
 
 body {
-    font-family: sans-serif; /* Choose a nicer font later! */
+    font-family: sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: white /* Light grey background */
+    background-color: white;
 }
 
 .container {
     max-width: 1200px; /* Max width of the content */
     margin: 0 auto;    /* Center the container */
     padding: 0 20px;   /* Add some padding on the sides */
-    background-color: #fff; /* White background for content area */
 }
 
 /* Header Section */
@@ -32,29 +31,28 @@ body {
     border-bottom: 1px solid #eee; /* Separator line */
 }
 
-.header .name {
-    font-size: 1.5rem;
+.header h1 {
+    font-size: 2.5rem;
     font-weight: bold;
-    text-decoration: none;  /* removes underline */
-    color: inherit;         /* keeps the current text color */
 }
 
-.header .nav ul {
+.nav ul {
     list-style: none;         /* Remove default bullet points */
     display: flex;              /* Align list items horizontally */
 }
 
-.header .nav ul li {
-    margin-left: 1.5rem;      /* Space between nav items */
+.nav ul li {
+    margin-left: 2rem;      /* Space between nav items */
 }
 
-.header .nav a {
+.nav a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
-.header .nav a:hover {
+.nav a:hover {
     color: #007bff; /* Highlight color on hover */
 }
 
@@ -65,44 +63,30 @@ body {
     justify-content: center;
     gap: 2rem;                /* Space between content and image */
     flex-wrap: wrap;            /* Allow items to wrap on smaller screens if needed */
-    min-height: 90vh;
+    min-height: 80vh;
+    margin: 32px;
 }
 
 .hero-content {
     flex: 1;                  /* Allow content to take available space */
     min-width: 300px;         /* Prevent content from getting too squished */
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
-    font-size: 3rem;
 }
 
 .hero-content h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #555;
     margin-bottom: 1rem;
-    font-size: 1.75rem;
 }
 
 .hero-content p {
     margin-bottom: 1.5rem;
-}
-
-.hero-image {
-    flex-basis: 250px;       /* Suggest a base width for the image container */
-    flex-shrink: 0;         /* Prevent image from shrinking */
-    text-align: center;     /* Center image if flex-wrap occurs */
-    border-radius: 200px;
-}
-
-.hero-image img {
-    max-width: 100%;        /* Make image responsive */
-    height: auto;
-    border-radius: 50%;    /* Make it circular */
-    border: 3px solid #eee; /* Optional border */
+    font-size: 1.2rem;
 }
 
 .cta-button {
@@ -118,103 +102,101 @@ body {
     background-color: #0056b3;
 }
 
+.hero-image {
+    width: 400px;
+    height: auto;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+}
+
 /* Projects Section */
 .projects {
     padding: 3rem 0;
-}
-
-.projects-title {
-    text-align: center;       /* Center the title */
+  }
+  
+.projects h2 {
+    text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
-}
-
-.projects-container {
-    display: flex;              /* Use flexbox for the grid */
-    flex-wrap: wrap;            /* CRITICAL: Allows items to wrap to the next line */
-    gap: 1.5rem;              /* Space between project items */
-    justify-content: center;    /* Center items horizontally when they wrap */
-}
-
-.project-item {
+  }
+  
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .project-item {
+    background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    overflow: hidden;         /* Keep contents within rounded borders */
-    background-color: #fff;
-    display: flex;            /* Use flexbox for internal layout */
-    flex-direction: column;   /* Stack image and content vertically */
-
-    /* Flexbox sizing for responsiveness without media queries */
-    flex: 0 1 300px;        /* flex-grow: 1, flex-shrink: 1, flex-basis: 300px */
-                            /* This means: allow growing, allow shrinking, aim for 300px base */
-                            /* Combined with flex-wrap, this creates the 3, 2, 1 column effect */
-}
-
-.project-image {
-    width: 100%;              /* Make image fill width */
-    height: 180px;            /* Fixed height for consistency */
-    object-fit: cover;        /* Cover the area, might crop */
-    display: block;           /* Remove extra space below image */
-}
-
-.project-content {
+    flex: 0 1 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-image {
+    height: 160px;
+    width: auto;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .project-content {
     padding: 1rem;
-    display: flex;            /* Use flex to push buttons to bottom */
-    flex-direction: column;   /* Stack content vertically */
-    flex-grow: 1;             /* Allow content area to grow, pushing links down */
-}
-
-.project-content h3 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .project-content h3 {
     margin-bottom: 0.5rem;
-}
-
-.project-text {
+  }
+  
+  .project-text {
     margin-bottom: 1rem;
-    flex-grow: 1;             /* Takes up space, pushing skills/links down */
-}
-
-.project-skills {
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.project-links {
-    display: flex;              /* Align buttons horizontally */
-    gap: 0.5rem;              /* Space between buttons */
-}
-
-.btn {
-    display: inline-flex;     /* Use inline-flex for alignment with icon */
-    align-items: center;      /* Vertically align icon and text */
+    font-size: 0.95rem;
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
     padding: 8px 12px;
-    background-color: #6c757d; /* Grey button */
+    background-color: #6c757d;
     color: white;
     text-decoration: none;
     border-radius: 4px;
     font-size: 0.9rem;
-}
-
-.btn i {
-    margin-right: 5px;        /* Space between icon and text */
-}
-
-.btn:hover {
+  }
+  
+  .btn i {
+    margin-right: 5px;
+  }
+  
+  .btn:hover {
     background-color: #5a6268;
-}
+  }
+  
 
 /* Contact Section */
 .contact {
     padding: 3rem 0;
     text-align: center;       /* Center align title and text */
-    margin-bottom: 2rem;
 }
 
-.contact-title {
+.contact h2 {
     font-size: 2rem;
 }
 
-.contact-text {
+.contact p {
     margin: 3rem;
     color: #555;
 }
@@ -230,7 +212,6 @@ body {
     display: inline-flex;
     align-items: center;
     padding: 12px 25px;
-    background-color: #28a745; /* Green button */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -239,10 +220,6 @@ body {
 
 .contact-btn i {
     margin-right: 8px;
-}
-
-.contact-btn:hover {
-    background-color: #218838;
 }
 
 /* Specific styles for different contact buttons if needed */
