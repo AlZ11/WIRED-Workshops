@@ -63,21 +63,17 @@ body {
 	justify-content: space-between; /* Push name left, nav right */
 	align-items: center; /* Vertically align items */
 	padding: 1rem 0; /* Add padding top/bottom */
-	border-bottom: 1px solid #eee; /* Separator line */
+	gap: 2rem; /* Make sure that nav does't get too close to h1 when screen becomes narrow */
 }
 
 .header h1 {
 	font-size: 2.5rem;
-	font-weight: bold;
 }
 
 .nav ul {
 	list-style: none; /* Remove default bullet points */
 	display: flex; /* Align list items horizontally */
-}
-
-.nav ul li {
-	margin-left: 2rem; /* Space between nav items */
+	gap: 2rem;
 }
 
 .nav a {
@@ -104,7 +100,7 @@ body {
 }
 
 .hero-content {
-	flex: 1; /* Allow content to take available space */
+	flex: 1;
 	min-width: 500px; /* Prevent content from getting too squished */
 	font-size: 1.3rem;
 }
@@ -125,16 +121,17 @@ body {
 	font-size: 1.2rem;
 }
 
-.cta-button {
-	display: inline-block;
+.hero-button {
+	display: inline-block; /* Make sure the button respects the padding/margins around it */
 	background-color: #007bff;
 	color: #fff;
 	padding: 10px 20px;
 	text-decoration: none;
 	border-radius: 5px;
+	font-weight: bold;
 }
 
-.cta-button:hover {
+.hero-button:hover {
 	background-color: #0056b3;
 }
 
@@ -163,17 +160,16 @@ body {
 
 .project-item {
 	background: #fff;
-	border: 1px solid #ddd;
 	border-radius: 8px;
-	flex: 0 1 300px;
 	display: flex;
 	flex-direction: column;
+	max-width: 300px; /* Ensure each card is the same width */
 }
 
 .project-image {
 	height: 160px;
 	width: auto;
-	object-fit: cover;
+	object-fit: cover; /* Fill container completely, crop image if needed*/
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
@@ -182,7 +178,7 @@ body {
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
-	flex-grow: 1;
+	flex-grow: 1; /* Content should grow to fill the entire space. Useful for keeping links at the bottom when one card has more text than the others */
 }
 
 .project-content h3 {
@@ -191,7 +187,6 @@ body {
 
 .project-text {
 	margin-bottom: 1rem;
-	font-size: 0.95rem;
 }
 
 .project-links {
@@ -200,23 +195,24 @@ body {
 	margin-top: auto;
 }
 
-.btn {
-	display: inline-flex;
+.project-btn {
+	display: flex;
 	align-items: center;
 	padding: 8px 12px;
-	background-color: #6c757d;
-	color: white;
+	background-color: #5c67f2;
+	color: #ffffff;
 	text-decoration: none;
 	border-radius: 4px;
 	font-size: 0.9rem;
+	font-weight: bold;
 }
 
-.btn i {
+.project-btn i {
 	margin-right: 5px;
 }
 
-.btn:hover {
-	background-color: #5a6268;
+.project-btn:hover {
+	background-color: #3d42a1;
 }
 
 /* Contact Section */
@@ -232,6 +228,7 @@ body {
 .contact p {
 	margin: 3rem;
 	color: #555;
+	font-size: 1.25rem;
 }
 
 .contact-buttons {
@@ -242,37 +239,38 @@ body {
 }
 
 .contact-btn {
-	display: inline-flex;
+	display: flex;
 	align-items: center;
 	padding: 12px 25px;
 	color: white;
 	text-decoration: none;
 	border-radius: 5px;
 	font-size: 1rem;
+	font-weight: bold;
 }
 
 .contact-btn i {
-	margin-right: 8px;
+	margin-right: 8px; /* Push icon away from the text */
 }
 
 /* Specific styles for different contact buttons if needed */
-.contact-btn[href*='mailto:'] {
+.contact-btn.email {
 	background-color: #007bff; /* Blue for email */
 }
-.contact-btn[href*='mailto:']:hover {
+.contact-btn.email:hover {
 	background-color: #0056b3;
 }
 
-.contact-btn[href*='linkedin.com'] {
+.contact-btn.linkedin {
 	background-color: #0e76a8; /* LinkedIn blue */
 }
-.contact-btn[href*='linkedin.com']:hover {
+.contact-btn.linkedin:hover {
 	background-color: #0b5f8a;
 }
-.contact-btn[href*='github.com'] {
+.contact-btn.github {
 	background-color: #333; /* GitHub dark */
 }
-.contact-btn[href*='github.com']:hover {
+.contact-btn.github:hover {
 	background-color: #222;
 }
 
