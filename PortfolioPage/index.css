@@ -1,6 +1,3 @@
-:root {
-	--accent: #47e6e8;
-}
 /* Basic Reset & Body Styles */
 * {
 	box-sizing: border-box; /* Include padding and border in element's total width/height */
@@ -12,29 +9,24 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
-	font-family: 'Courier New', Courier, monospace;
-	line-height: 1.6;
-	color: #333;
-	background-color: white;
-}
-
 .container {
+	font-family: 'Courier New', Courier, monospace;
+	line-height: 1.6; /* Affects the height between lines */
 	max-width: 1200px; /* Max width of the content */
-	margin: 0 auto; /* Center the container */
-	padding: 0 20px; /* Add some padding on the sides */
+	margin: 0 auto; /* Shorthand property. 0px top and bottom. auto distributes the remaining horizontal space evenly left and right*/
+	padding: 0 20px; /* Shorthand for 0px on top and bottom, 20px left and right*/
 }
 
-/* 1️⃣  Keyframes: slide the gradient left → right → left */
+/* 1️⃣  Keyframes: slide the gradient left → right → left. Creates a smooth, looping left to right animation */
 @keyframes pastel-pan {
 	0% {
-		background-position: 0% 50%;
+		background-position: 0% 50%; /* Show left */
 	}
 	50% {
-		background-position: 100% 50%;
+		background-position: 100% 50%; /* Show right */
 	}
 	100% {
-		background-position: 0% 50%;
+		background-position: 0% 50%; /* Back to left */
 	}
 }
 
@@ -42,7 +34,7 @@ body {
 .bg-pastel-flow {
 	/* whisper-light colours */
 	background: linear-gradient(
-		120deg,
+		120deg, /* set a diagonal gradient from bottom left to top right*/
 		#fdfbfb 0%,
 		/* near-white */ #dedcff 25%,
 		/* hint of lavender */ #e1f7ff 50%,
@@ -50,19 +42,20 @@ body {
 		/* blush pink */ #ffe5e5 100%
 	); /* back to near-white */
 
-	/* make the gradient large so the shift is subtle */
+	/* make the area large so the shift is subtle */
 	background-size: 400% 400%;
 
 	/* slow, gentle drift */
+	/* 18 seconds to complete cycle, smooth, loops forever */
 	animation: pastel-pan 18s ease-in-out infinite;
 }
 
 /* Header Section */
 .header {
-	display: flex; /* Use flexbox for layout */
+	display: flex; /* Use flexbox for layout which makes it easier to arrange and align items in a container. Useful for creating flexible and dynamic layouts */
 	justify-content: space-between; /* Push name left, nav right */
 	align-items: center; /* Vertically align items */
-	padding: 1rem 0; /* Add padding top/bottom */
+	padding: 1rem 0; /* Add padding top/bottom. rem stands for root em and it is a relative unit to the html element's font size */
 	gap: 2rem; /* Make sure that nav does't get too close to h1 when screen becomes narrow */
 }
 
@@ -78,30 +71,28 @@ body {
 
 .nav a {
 	text-decoration: none;
-	color: #333;
+	color: black;
 	font-weight: bold;
 	font-size: 1.5rem;
 }
 
 .nav a:hover {
-	color: #007bff; /* Highlight color on hover */
+	color: #007bff; /* Using a hexadecimal colour code*/
 }
 
 /* Hero Section */
 .hero {
-	position: relative;
 	display: flex; /* Use flexbox */
 	align-items: center; /* Vertically align content and image */
 	justify-content: center;
 	gap: 2rem; /* Space between content and image */
 	flex-wrap: wrap; /* Allow items to wrap on smaller screens if needed */
-	min-height: 80vh;
+	min-height: 80vh; /* Makes the height at least 80% of the height of the screen*/
 	margin: 32px;
 }
 
 .hero-content {
-	flex: 1;
-	min-width: 500px; /* Prevent content from getting too squished */
+	flex: 1; /* Shorthand for grow: 1, shrink: 1, basis: 0% */
 	font-size: 1.3rem;
 }
 
@@ -112,22 +103,21 @@ body {
 
 .hero-content h3 {
 	font-size: 2rem;
-	color: #555;
 	margin-bottom: 1rem;
 }
 
 .hero-content p {
-	margin-bottom: 1.5rem;
 	font-size: 1.2rem;
+	margin-bottom: 1.5rem;
 }
 
 .hero-button {
 	display: inline-block; /* Make sure the button respects the padding/margins around it */
 	background-color: #007bff;
-	color: #fff;
+	color: white;
 	padding: 10px 20px;
-	text-decoration: none;
-	border-radius: 5px;
+	text-decoration: none; /* Get rid of the underline */
+	border-radius: 5px; /* Round the edges a bit*/
 	font-weight: bold;
 }
 
@@ -137,7 +127,7 @@ body {
 
 .hero-image {
 	width: 500px;
-	height: auto;
+	height: auto; /* Automatically calculate the height so original aspect ratio is maintained*/
 }
 
 /* Projects Section */
@@ -159,7 +149,7 @@ body {
 }
 
 .project-item {
-	background: #fff;
+	background-color: white;
 	border-radius: 8px;
 	display: flex;
 	flex-direction: column;
@@ -170,7 +160,7 @@ body {
 	height: 160px;
 	width: auto;
 	object-fit: cover; /* Fill container completely, crop image if needed*/
-	border-top-left-radius: 8px;
+	border-top-left-radius: 8px; /* Match the rounded edges of the card */
 	border-top-right-radius: 8px;
 }
 
@@ -195,23 +185,23 @@ body {
 	margin-top: auto;
 }
 
-.project-btn {
+.project-button {
 	display: flex;
 	align-items: center;
 	padding: 8px 12px;
 	background-color: #5c67f2;
-	color: #ffffff;
+	color: white;
 	text-decoration: none;
 	border-radius: 4px;
 	font-size: 0.9rem;
 	font-weight: bold;
 }
 
-.project-btn i {
+.project-button i {
 	margin-right: 5px;
 }
 
-.project-btn:hover {
+.project-button:hover {
 	background-color: #3d42a1;
 }
 
@@ -227,7 +217,6 @@ body {
 
 .contact p {
 	margin: 3rem;
-	color: #555;
 	font-size: 1.25rem;
 }
 
@@ -238,39 +227,39 @@ body {
 	flex-wrap: wrap; /* Allow buttons to wrap if needed */
 }
 
-.contact-btn {
+.contact-button {
 	display: flex;
 	align-items: center;
 	padding: 12px 25px;
-	color: white;
 	text-decoration: none;
 	border-radius: 5px;
 	font-size: 1rem;
 	font-weight: bold;
+	color: white;
 }
 
-.contact-btn i {
+.contact-button i {
 	margin-right: 8px; /* Push icon away from the text */
 }
 
-/* Specific styles for different contact buttons if needed */
-.contact-btn.email {
+/* Specific styles for different contact buttons */
+.contact-button.email {
 	background-color: #007bff; /* Blue for email */
 }
-.contact-btn.email:hover {
+.contact-button.email:hover {
 	background-color: #0056b3;
 }
 
-.contact-btn.linkedin {
+.contact-button.linkedin {
 	background-color: #0e76a8; /* LinkedIn blue */
 }
-.contact-btn.linkedin:hover {
+.contact-button.linkedin:hover {
 	background-color: #0b5f8a;
 }
-.contact-btn.github {
+.contact-button.github {
 	background-color: #333; /* GitHub dark */
 }
-.contact-btn.github:hover {
+.contact-button.github:hover {
 	background-color: #222;
 }
 
